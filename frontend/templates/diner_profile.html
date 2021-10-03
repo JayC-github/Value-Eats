@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diner Profile</title>
+    <link rel="stylesheet" href="../../static/styles/diner_profile.css">
+    <link rel="stylesheet" href="../../static/styles/nav_bar.css">
+</head>
+
+<body>
+    <nav id="nav-bar">
+        <button class="home">Value Eats</button>
+        <button id="logout-btn" class="nav-btn">logout</button>
+    </nav>
+    <main>
+        <section id="side-bar" class="side-bar">
+            <div id="to-profile"><img src="../../static/images/profile_icon.png"> Profile</div>
+            <div id="to-active"><img src="../../static/images/voucher_icon.png"> Active Voucher</div>
+            <div id="to-previous"><img src="../../static/images/voucher_icon.png"> Previous Voucher</div>
+            <div id="to-expired"><img src="../../static/images/voucher_icon.png"> Expired Voucher</div>
+        </section>
+        <section class="container">
+            <div id="profile" class="page">
+                <div id="welcome-section">
+                    <h1 id="welcome-msg">Welcome, Joe!</h1>
+                    <div>
+                        <img id="welcome-img" src="" alt="">
+                    </div>
+                    <label class="switch">
+                        <input id="profile-switch" type="checkbox">
+                        <span class="slider"></span>
+                      </label>
+                    <h4 id="welcome-email">1016859319@qq.com</h4>
+                </div>
+                <div id="profile-section">
+                    <h1>Your Profile</h1>
+                    <form id="profile-form">
+                        <div class="txt_field">
+                            <label for="first_name">first name:</label>
+                            <input type="text" name="first_name" id="first_name" required>
+                            <span></span>
+                        </div>
+                        <div class="txt_field">
+                            <label for="last_name">last name:</label>
+                            <input type="text" name="last_name" id="last_name" required>
+                            <span></span>
+                        </div>
+                        <div class="txt_field">
+                            <label for="phone">phone:</label>
+                            <input type="text" name="phone" id="phone" required>
+                            <span></span>
+                        </div>
+                        
+                        
+                        
+                        <input type="submit" id="submit" value="Update">
+                    </form>
+                </div>
+            </div>
+            <div id="view-active" class="page">
+                <h1>Active Vouchers</h1>
+                <table id="vouchers">
+                    <tr class="thv" id='thv'>
+                        <th>Eatery</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Discount</th>
+                        <th>Code</th>
+                        <th>Action</th>
+                    </tr>
+                    <!-- <tr class="th">
+                        <th>test</th>
+                        <th>2021-07-20</th>
+                        <th>test</th>
+                        <th>test</th>
+                        <th>test</th>
+                    </tr> -->
+                </table>
+            </div>
+            <div id="view-previous" class="page">
+                <h1>Previous Vouchers</h1>
+                <table id="previous">
+                    <tr class = "thp" id = "thp">
+                        <th>Eatery</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Discount</th>
+                        <th>Code</th>
+                        <th>Action</th>
+                    </tr>
+                </table>
+            </div>
+            <div id="view-expired" class="page">
+                <h1>Expired Vouchers</h1>
+                <table id="expired">
+                    <tr class = "thp" id = "thp">
+                        <th>Eatery</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Discount</th>
+                        <th>Code</th>
+                    </tr>
+                </table>
+            </div>
+            
+            
+        </section>
+        <section id="add-comment-page">
+            <div class="center">
+                <h1>Add Review</h1>
+                <p id="review-msg"></p>
+                <div class="rating-block">
+                    <p>Overall Rating:</p>
+                    <fieldset id="rating" class="rating">
+                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+                    </fieldset>
+                </div>
+                <div class="review-block">
+                    <textarea name="" id="comment" cols="30" rows="5" placeholder="How was your dinning experience?"></textarea>
+                </div>
+                <button id="submit-review">submit review</button>
+            </div>
+        </section>
+        <section id="view-detail-page">
+            <div class="center">
+                <h1>Voucher Details</h1>
+                <form id="detail-form">
+                    <div>
+                        <label for="">arrival time: </label>
+                        <input id="arrival_time" type="time">
+                    </div>
+                    <div>
+                        <label for="">number of people: </label>
+                        <input id="num_of_guest" type="number">
+                    </div>
+                    <div>
+                        <label for="">additional request: </label>
+                        <input id="special_request" type="text">
+                    </div>
+                    <input id="close-view-detail" type="button" class="submit" value="OK">
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="../../static/scripts/diner_profile.js"></script>
+    <script src="../../static/scripts/logout.js"></script>
+</body>
+</html>

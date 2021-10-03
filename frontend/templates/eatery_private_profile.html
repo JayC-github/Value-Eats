@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../static/styles/eatery_private_profile.css">
+    <link rel="stylesheet" href="../../static/styles/reservation.css">
+    <link rel="stylesheet" href="../../static/styles/stars.css">
+    <link rel="stylesheet" href="../../static/styles/nav_bar.css">
+</head>
+<body>
+    <nav id="nav-bar">
+        <button class="home">Value Eats</button>
+        <button id="logout-btn" class="nav-btn">logout</button>
+        <button id="preview-btn" class="nav-btn">preview</button>
+    </nav>
+    <main>
+        <section id="side-bar" class="side-bar">
+            <div id="to-profile"><img src="../../static/images/profile_icon.png"> Profile</div>
+            <div id="to-schedule"><img src="../../static/images/schedule_icon.png"> Schedule</div>
+            <div id="to voucher"><img src="../../static/images/voucher_icon.png"> Voucher</div>
+            <div id="to-reserve"><img src="../../static/images/reservation_icon.png"> Reservation</div>
+            <div id="to-analysis"><img src="../../static/images/analytic.png"> Analytic</div>
+        </section>
+        <section class="container">
+            <div id="profile" class="page subpage">
+                <div id="profile-section">
+                    <h1>Profile</h1>
+                    <p id="profile-msg"></p>
+                    <form id="profile-form">
+                        <div>
+                            <div class="txt_field left">
+                                <label for="first_name">first name:</label>
+                                <input type="text" name="first_name" id="first_name" required>
+                                <span></span>
+                            </div>
+                            <div class="txt_field right">
+                                <label for="last_name">last name:</label>
+                                <input type="text" name="last_name" id="last_name" required>
+                                <span></span>
+                            </div>
+                            <div class="txt_field left">
+                                <label for="phone">phone:</label>
+                                <input type="text" name="phone" id="phone" required>
+                                <span></span>
+                            </div>
+                            <div class="txt_field right">
+                                <label for="eatery_name">eatery name:</label>
+                                <input type="text" name="eatery_name" id="eatery_name" required>
+                                <span></span>
+                            </div>
+                            <h4>cuisine types</h4>
+                            <div class="btn_field whole">
+                                <span id="cuisines"></span>
+                            </div>
+                            <div class="txt_field left">
+                                <label for="cuisine">enter cuisine:</label>
+                                <input type="text" id="cuisine">
+                                <span></span>
+                                <button id="add-cuisine">+</button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="txt_field right">
+                                <label for="city">city:</label>
+                                <input type="text" name="city" id="city" required>
+                                <span></span>
+                            </div>
+                            <div class="txt_field right">
+                                <label for="suburb">suburb:</label>
+                                <input type="text" name="suburb" id="suburb" required>
+                                <span></span>
+                            </div>
+                            <div class="txt_field whole">
+                                <label for="address">address:</label>
+                                <input type="text" name="address" id="address" required>
+                                <span></span>
+                            </div>
+                            <div class="txt_field whole">
+                                <label for="description">description:</label>
+                                <input type="text" name="description" id="description">
+                                <span></span>
+                            </div>
+                            <div class="txt_field whole">
+                                <label for="menu">menu:</label>
+                                <input type="file" id="menu">
+                                <a id="view-menu" href="#">view menu</a>
+                                <span></span>
+                            </div>
+                            <div class="txt_field">
+                            </div>
+                        </div>
+                        
+                        <input type="submit" id="submit" value="Update Profile">
+                    </form>
+                </div>
+                <div id="iamge-section">
+                    <h1>Images</h1>
+                    <p id="image-msg"></p>
+                    <div id="image-upload">
+                        <label>upload image: </label>
+                        <input type="file" id="image" />
+                    </div>
+                    <div id="image-container"></div>
+                </div>
+            </div>
+            <div id="view-schedule" class="page subpage">
+                <h1>Schedules</h1>
+                <table id="schedules">
+                    <tr class="th">
+                        <th>weekday</th>
+                        <th>start</th>
+                        <th>end</th>
+                        <th>discount</th>
+                        <th>amount</th>
+                        <th>Action</th>
+                    </tr>
+                </table>
+                <button id="add-schedule-btn">add schedule</button>
+            </div>
+            <div id="view-voucher" class="page subpage">
+                <h1>Vouchers</h1>
+                <table id="vouchers">
+                    <tr>
+                        <th>date</th>
+                        <th>weekday</th>
+                        <th>start</th>
+                        <th>end</th>
+                        <th>discount</th>
+                        <th>amount</th>
+                        <th>Actions</th>
+                    </tr>
+                </table>
+                <button id="add-voucher-btn">add voucher</button>
+            </div>
+            <div id="add-voucher" class="center">
+                <form id="voucher-form">
+                    <h1>Add Voucher Form</h1>
+                    <p id="voucher-msg"></p>
+                    <div>
+                        <label>Date: </label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div>
+                        <label>Start: </label>
+                        <input type="time" id="voucher-start" name="start" min="00:00" max="23:59" required>
+                    </div>
+                    <div>
+                        <label>End: </label>
+                        <input type="time" id="voucher-end" name="end" min="00:00" max="23:59" required>
+                    </div>
+                    <div>
+                        <label>Discount(%): </label>
+                        <input type="number" id="voucher-discount" min="0" max="100" required>
+                    </div>
+                    <div>
+                        <label>Voucher Num: </label>
+                        <input type="number" id="voucher-amount" name="amount" min="1" max="100" required>
+                    </div>
+                    <input type="submit" id="submit-voucher" name="submit" class="submit" value="add">
+                </form>
+            </div>
+            <div id="add-schedule" class="center">
+                <form id="schedule-form">
+                    <h1>Add Schedule Form</h1>
+                    <p id="schedule-msg"></p>
+                    <div>
+                        <label>Weekday: </label>
+                        <select id="weekday" name="weekday">
+                            <option value="Monday">Mon</option>
+                            <option value="Tuesday">Tue</option>
+                            <option value="Wednesday">Wed</option>
+                            <option value="Thursday">Thu</option>
+                            <option value="Friday">Fri</option>
+                            <option value="Saturday">Sat</option>
+                            <option value="Sunday">Sun</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Start: </label>
+                        <input type="time" id="schedule-start" name="start" min="00:00" max="23:59" required>
+                    </div>
+                    <div>
+                        <label>End: </label>
+                        <input type="time" id="schedule-end" name="end" min="00:00" max="23:59" required>
+                    </div>
+                    <div>
+                        <label>Discount(%): </label>
+                        <input type="number" id="schedule-discount" min="0" max="100" required>
+                    </div>
+                    <div>
+                        <label>Voucher Num: </label>
+                        <input type="number" id="schedule-amount" name="amount" min="1" max="100" required>
+                    </div>
+                    <input type="submit" id="submit-schedule" name="submit" class="submit" value="add">
+                </form>
+            </div>
+            <div id="view-reservation" class="page subpage">
+                <section id="reservation-container">
+                    <h1>Reservation</h1>
+                    <div id="select-row">
+                        <div id='sort-order' class="right">
+                            <input id="sort-order-input" type="checkbox">
+                            <label for="sort-order-input"></label>
+                        </div>
+                        <div id="sort" class="right">
+                            <label>sort by: </label>
+                            <select id="sort-select">
+                                <option value="by time">by time</option>
+                                <option value="by discount">by discount</option>
+                            </select>
+                        </div>
+                        <div id="filter" class="right">
+                            <label>filter by: </label>
+                            <select id="filter-select">
+                                <option value="all">all</option>
+                                <option value="completed">completed</option>
+                                <option value="incomplete">incomplete</option>
+                                <option value="expired">expired</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="reservation-content">
+                        <table id="reservation-table">
+                            <tr>
+                                <th>Date</th>
+                                <th>Weekday</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                                <th>Discount</th>
+                                <th>Contact</th>
+                                <th>Action</th>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+            </div>
+            <div id="view-analysis" class="page subpage">
+                <h1>Analytics</h1>
+                <hr />
+                <section id="analysis-container">
+                    <div class="chart-container">
+                        <h3>Completed Reservation in Previous Week</h3>
+                        <canvas id="line_chart"></canvas>
+                      </div>
+                      <div class="chart-container">
+                        <h3>Ratings of Reviews</h3>
+                        <canvas id="doughnut_chart"></canvas>
+                      </div>
+                </section>
+            </div>
+        </section>
+        <section id="checkcode-page">
+            <div class="checkcode-center">
+                <h1>check code</h1>
+                <p id="checkcode-msg"></p>
+                <form id="checkcode-form">
+                    <div class="txt_field">
+                        <input id="checkcode" type="text" name="checkcode" required>
+                        <span></span>
+                        <label>Booking code</label>
+                    </div>
+                    <input type="submit" value="complete booking">
+                </form>
+            </div>
+        </section>
+        <section id="view-review-page">
+            <div class="view-review-center">
+                <h1>View Reviews</h1>
+                <section id="comment-container">
+
+                </section>
+            </div>
+        </section>
+        <section id="view-detail-page">
+            <div class="view-detail-center">
+                <h1>View Detail</h1>
+                <div>
+                    <label for="">arrival time:</label>
+                    <span id="arrival_time">10:10</span>
+                </div>
+                <div>
+                    <label for="">number of people:</label>
+                    <span id="num_of_guest">10</span>
+                </div>
+                <div>
+                    <label for="">special request:</label>
+                    <span id="special_request">aaaa</span>
+                </div>
+                <button id="close-view-detail">OK</button>
+            </div>
+        </section>
+        <section id="menu-section"></section>
+    </main>
+    
+    <script src="../../static/scripts/eatery_private_profile.js"></script>
+    <script src="../../static/scripts/load_vouchers.js"></script>
+    <script src="../../static/scripts/logout.js"></script>
+    <script src="../../static/scripts/reservation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../static/scripts/analysis.js"></script>
+</body>
+</html>
