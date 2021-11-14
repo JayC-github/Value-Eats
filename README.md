@@ -69,4 +69,4 @@ Or you can check some preloaded acounts, login with following account:
 | ...                | ...             | ...             | ...            |
 
 
-![Report](Project-Report/Project Report-01.png)
+![Report](report/01.png)
