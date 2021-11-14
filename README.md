@@ -67,3 +67,6 @@ Or you can check some preloaded acounts, login with following account:
 | 00000011@gmail.com | 12345678        | 00000011@qq.com | 12345678       |
 | 00000012@gmail.com | 12345678        | 00000012@qq.com | 12345678       |
 | ...                | ...             | ...             | ...            |
+
+
+![Report](Project-Report/Project Report-01.png)
